@@ -1,0 +1,21 @@
+<h1>Contact Page</h1>
+
+<%# members = ["Doug", "Sylvain", "Sasha", "Noemi", "Scooter", "Soufiane"] %>
+
+<ol>
+  <% @members.each do |member| %>
+    <li><%= member %></li>
+  <% end %>
+</ol>
+
+<form action="/contact" method="get">
+  <!-- http://localhost:3000/contact?member=Noemi -->
+  <input type="text" 
+    placeholder="Who are you looking for?" 
+    name="member"
+    value="<%= params[:member] %>"
+  >
+  <input type="submit">
+</form>
+
+<%= link_to 'Home', root_path %>
